@@ -8,22 +8,18 @@
 import UIKit
 
 class DetalhesViewController: UIViewController {
-
+    @IBOutlet weak var lblNomeComum: UILabel!
+    @IBOutlet weak var lblMarcaComercial: UILabel!
+    var nomeComumText: String?
+    var marcaComercialText: String?
+    var produtoBiologico: DatumProdutosBiologicos?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        if let nomeComum = nomeComumText {
+            lblNomeComum.text = nomeComum
+            
+        }
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
