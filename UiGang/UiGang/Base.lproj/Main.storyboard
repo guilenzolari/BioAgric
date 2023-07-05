@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -84,6 +84,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="trd-gA-U5D" kind="show" id="QG4-NM-Pzi"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -106,7 +109,17 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="98a-tN-tfW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1098" y="998"/>
+            <point key="canvasLocation" x="-1098.4732824427481" y="997.88732394366207"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="vRQ-ip-FRs">
+            <objects>
+                <viewControllerPlaceholder id="trd-gA-U5D" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="dcn-zI-Gay"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TDB-dd-CMY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-302" y="823"/>
         </scene>
     </scenes>
     <resources>
