@@ -111,10 +111,10 @@
             </objects>
             <point key="canvasLocation" x="-1098.4732824427481" y="997.88732394366207"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--DetalhesViewController-->
         <scene sceneID="vRQ-ip-FRs">
             <objects>
-                <viewControllerPlaceholder id="trd-gA-U5D" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Detalhes" referencedIdentifier="DetalhesViewController" id="trd-gA-U5D" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="dcn-zI-Gay"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TDB-dd-CMY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
