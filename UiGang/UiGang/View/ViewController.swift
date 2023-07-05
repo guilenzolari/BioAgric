@@ -8,12 +8,13 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
-
+class  ViewController: UIViewController {
+    
     @IBOutlet weak var pragasTableView: UITableView!
     
     var selectedDatum: DatumProdutosBiologicos?
     var selectedProdutoBiologico: DatumProdutosBiologicos?
+    
     
   var controller: PragasController = PragasController()
   var arrayPragas:[String] = []
@@ -43,10 +44,10 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
   }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let detalhesVC = UIStoryboard(name: "Detalhes", bundle: nil).instantiateViewController(withIdentifier: "DetalhesViewController") as! DetalhesViewController
-            let nomeComum = self.controller.loadCurrentName(indexPath: indexPath)
-            detalhesVC.nomeComumText = nomeComum
-            self.navigationController?.pushViewController(detalhesVC, animated: true)
-        }
+        let detalhesVC = UIStoryboard(name: "Detalhes", bundle: nil).instantiateViewController(withIdentifier: "DetalhesViewController") as! DetalhesViewController
+        detalhesVC.produtoBiologico = self.controller.loadCurrentProdutoBiologico(indexPath: indexPath)
+        self.navigationController?.pushViewController(detalhesVC, animated: true)
+       
+    }
     
 }
