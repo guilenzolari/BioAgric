@@ -20,6 +20,8 @@
 		35C503D62A5448E10074BBCA /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C503D52A5448E10074BBCA /* FavoritosViewController.swift */; };
 		BD4E2B1F2A545D6900662DEC /* PragasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E2B1E2A545D6900662DEC /* PragasController.swift */; };
 		BD4E2B212A545D7500662DEC /* Pragas.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD4E2B202A545D7500662DEC /* Pragas.swift */; };
+		F2C4FB892A54934800D6774E /* Culturas.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C4FB882A54934800D6774E /* Culturas.swift */; };
+		F2C4FB8B2A54935D00D6774E /* CulturasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C4FB8A2A54935D00D6774E /* CulturasController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		BD4E2B1E2A545D6900662DEC /* PragasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PragasController.swift; sourceTree = "<group>"; };
 		BD4E2B202A545D7500662DEC /* Pragas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pragas.swift; sourceTree = "<group>"; };
 		E149238AEAD0AE5F4513363A /* Pods-UiGang.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UiGang.release.xcconfig"; path = "Target Support Files/Pods-UiGang/Pods-UiGang.release.xcconfig"; sourceTree = "<group>"; };
+		F2C4FB882A54934800D6774E /* Culturas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Culturas.swift; sourceTree = "<group>"; };
+		F2C4FB8A2A54935D00D6774E /* CulturasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CulturasController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +79,8 @@
 		275C25812A5314C10030405C /* UiGang */ = {
 			isa = PBXGroup;
 			children = (
-				BD4E2B1C2A545CFF00662DEC /* View */,
 				BD4E2B1D2A545D0600662DEC /* Model */,
+				BD4E2B1C2A545CFF00662DEC /* View */,
 				BD4E2B1B2A545C8E00662DEC /* Controller */,
 				275C25822A5314C10030405C /* AppDelegate.swift */,
 				275C25842A5314C10030405C /* SceneDelegate.swift */,
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				BD4E2B1E2A545D6900662DEC /* PragasController.swift */,
+				F2C4FB8A2A54935D00D6774E /* CulturasController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -109,9 +114,9 @@
 		BD4E2B1C2A545CFF00662DEC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				275C25862A5314C10030405C /* ViewController.swift */,
 				35C503D12A5446580074BBCA /* CulturasViewController.swift */,
 				35C503D52A5448E10074BBCA /* FavoritosViewController.swift */,
-				275C25862A5314C10030405C /* ViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -120,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				BD4E2B202A545D7500662DEC /* Pragas.swift */,
+				F2C4FB882A54934800D6774E /* Culturas.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +262,8 @@
 				275C25832A5314C10030405C /* AppDelegate.swift in Sources */,
 				BD4E2B1F2A545D6900662DEC /* PragasController.swift in Sources */,
 				275C25852A5314C10030405C /* SceneDelegate.swift in Sources */,
+				F2C4FB892A54934800D6774E /* Culturas.swift in Sources */,
+				F2C4FB8B2A54935D00D6774E /* CulturasController.swift in Sources */,
 				35C503D62A5448E10074BBCA /* FavoritosViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
