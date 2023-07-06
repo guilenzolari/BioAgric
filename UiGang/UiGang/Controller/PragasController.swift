@@ -40,6 +40,7 @@ class PragasController {
       "Authorization": "Bearer fa31c5ec-034f-3202-bca6-c00ef36d7591"
     ]
     let urlAPI = "https://api.cnptia.embrapa.br/bioinsumos/v1/produtos-biologicos"
+<<<<<<< HEAD
       AF.request(urlAPI, headers: headers).responseJSON { response in
               if let statusCode = response.response?.statusCode, statusCode == 200 {
                   if let data = response.data {
@@ -70,6 +71,23 @@ class PragasController {
                           completionHandler(false, error)
                       }
                   }
+=======
+    AF.request(urlAPI, headers: headers).responseJSON { response in
+      if let statusCode = response.response?.statusCode,
+        statusCode == 200 {
+        if let data = response.data {
+          do {
+            let pragaModel: ProdutoBiologico? = try JSONDecoder().decode(ProdutoBiologico.self, from: data)
+            
+              if let pragas = pragaModel?.data {
+             
+                var array: [String] = []
+                
+              for praga in pragas {
+                  if let nomeComum = praga.pragas.first?.nomeComum.first {
+                    array.append(nomeComum)
+                }
+>>>>>>> developer
               }
           }
   }

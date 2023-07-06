@@ -18,6 +18,7 @@ class  ViewController: UIViewController {
     
   var controller: PragasController = PragasController()
   var arrayPragas:[String] = []
+    
   override func viewDidLoad() {
     super.viewDidLoad()
     self.pragasTableView.delegate = self
