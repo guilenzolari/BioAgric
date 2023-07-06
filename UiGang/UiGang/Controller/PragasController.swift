@@ -16,7 +16,7 @@ class PragasController {
   func loadCurrentName(indexPath: IndexPath) -> String {
     return self.arrayPragas[indexPath.row]
   }
-  func getRequestPragas(completionHandler: @escaping(Bool, Error?) -> Void){
+  func getRequestPragas(completionHandler: @escaping([String], Error?) -> Void){
     let headers: HTTPHeaders = [
       "Accept": "application/json",
       "Authorization": "Bearer fa31c5ec-034f-3202-bca6-c00ef36d7591"
@@ -37,11 +37,11 @@ class PragasController {
               }
               //capital letters, alphabetical order and deleting repeated ones
               self.arrayPragas = Array(Set(array)).sorted().map { $0.capitalized }
-              completionHandler(true, nil)
+                completionHandler(self.arrayPragas, nil)
             }
           } catch {
             print(error)
-            completionHandler(false, error)
+            completionHandler([], error)
           }
         }
       }
