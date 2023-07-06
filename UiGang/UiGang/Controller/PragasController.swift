@@ -28,10 +28,13 @@ class PragasController {
         if let data = response.data {
           do {
             let pragaModel: ProdutoBiologico? = try JSONDecoder().decode(ProdutoBiologico.self, from: data)
-            if let pragas = pragaModel?.data {
-              var array: [String] = []
+            
+              if let pragas = pragaModel?.data {
+             
+                var array: [String] = []
+                
               for praga in pragas {
-                if let nomeComum = praga.pragas.first?.nomeComum.first {
+                  if let nomeComum = praga.pragas.first?.nomeComum.first {
                     array.append(nomeComum)
                 }
               }
