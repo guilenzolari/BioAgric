@@ -32,12 +32,20 @@ class CulturasViewController: UIViewController {
 
 //Table View
 extension CulturasViewController: UITableViewDelegate, UITableViewDataSource{
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+  
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.controller.count()
   }
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+  
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     cell.textLabel?.text = self.controller.loadCurrentName(indexPath: indexPath)
     return cell
   }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let culturasDetalhesVC = UIStoryboard(name: "CulturasDetalhes", bundle: nil).instantiateViewController(withIdentifier: "culturasDetalhes") as! CulturasDetalhesViewController
+        
+        self.navigationController?.pushViewController(culturasDetalhesVC, animated: true)
+    }
 }
