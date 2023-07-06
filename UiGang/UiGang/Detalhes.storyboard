@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Marca Comercial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaT-rJ-Q5Z">
-                                <rect key="frame" x="24" y="325" width="137" height="21"/>
+                                <rect key="frame" x="21" y="325" width="250" height="21"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -42,18 +42,18 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EaT-rJ-Q5Z" secondAttribute="trailing" constant="232" id="3Pw-gP-4QJ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cHE-Qz-eph" secondAttribute="trailing" constant="143" id="7PN-bM-jW8"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zNA-XH-SXt" secondAttribute="trailing" constant="72" id="9t2-uG-27f"/>
                             <constraint firstItem="cGm-mh-9Pg" firstAttribute="top" secondItem="zNA-XH-SXt" secondAttribute="bottom" constant="8" symbolic="YES" id="BpI-RN-V5e"/>
+                            <constraint firstItem="EaT-rJ-Q5Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="21" id="DxD-Vo-Cdg"/>
                             <constraint firstItem="cGm-mh-9Pg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="72" id="GRI-wL-IUe"/>
                             <constraint firstItem="zNA-XH-SXt" firstAttribute="top" secondItem="cHE-Qz-eph" secondAttribute="bottom" constant="8" symbolic="YES" id="L8z-Bv-vFl"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cGm-mh-9Pg" secondAttribute="trailing" constant="72" id="LPr-U8-65l"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EaT-rJ-Q5Z" secondAttribute="trailing" constant="122" id="MBY-iW-mmR"/>
                             <constraint firstItem="cHE-Qz-eph" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="166" id="bst-VD-5gN"/>
-                            <constraint firstItem="EaT-rJ-Q5Z" firstAttribute="top" secondItem="cGm-mh-9Pg" secondAttribute="bottom" constant="8" symbolic="YES" id="by3-da-reK"/>
-                            <constraint firstItem="EaT-rJ-Q5Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="24" id="qmK-Zq-3jC"/>
                             <constraint firstItem="cHE-Qz-eph" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="143" id="qsA-LL-KLz"/>
                             <constraint firstItem="zNA-XH-SXt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="72" id="s4g-at-a45"/>
+                            <constraint firstItem="EaT-rJ-Q5Z" firstAttribute="top" secondItem="cGm-mh-9Pg" secondAttribute="bottom" constant="8" symbolic="YES" id="xgC-5y-BgM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vTH-SB-wAL"/>
