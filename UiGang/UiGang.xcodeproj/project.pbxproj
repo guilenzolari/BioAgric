@@ -428,9 +428,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8JTQ9M4J69;
+				DEVELOPMENT_TEAM = LN44B42H6P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UiGang/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Agrinho;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -458,9 +459,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 8JTQ9M4J69;
+				DEVELOPMENT_TEAM = LN44B42H6P;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = UiGang/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Agrinho;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
