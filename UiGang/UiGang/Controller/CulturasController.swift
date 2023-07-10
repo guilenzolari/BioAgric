@@ -20,7 +20,7 @@ class CulturasController {
     return self.arrayCulturas[indexPath.row]
   }
 
-  func getRequestPragas(completionHandler: @escaping(Bool, Error?) -> Void){
+  func getRequestPragas(completionHandler: @escaping([String], Error?) -> Void){
     let headers: HTTPHeaders = [
       "Accept": "application/json",
       "Authorization": "Bearer fa31c5ec-034f-3202-bca6-c00ef36d7591"
@@ -44,11 +44,11 @@ class CulturasController {
               }
               //capital letters, alphabetical order and deleting repeated ones
               self.arrayCulturas = Array(Set(array)).sorted().map { $0.capitalized }
-              completionHandler(true, nil)
+                  completionHandler(self.arrayCulturas, nil)
             }
           } catch {
             print(error)
-            completionHandler(false, error)
+            completionHandler([], error)
           }
         }
       }

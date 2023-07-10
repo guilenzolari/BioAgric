@@ -50,13 +50,10 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
                 self.arrayPragas = response
                 self.sectionTitle = Array(Set(self.arrayPragas.compactMap({ String($0.prefix(1)) })))
                 self.sectionTitle.sort()
-                
                 self.sectionTitle.forEach { letter in
                     let filteredPragas = self.arrayPragas.filter { $0.hasPrefix(letter) }
                     self.pragasDict[letter] = filteredPragas
                 }
-                
-                
                 self.pragasTableView.reloadData()
             } else {
                 print(error)
@@ -86,16 +83,9 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
         func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
             sectionTitle[section]
         }
+        func sectionIndexTitles (for tableView: UITableView) -> [String]? {
+            sectionTitle
+        }
+        
       }
 
-       /* func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-         let cell: UITableViewCell = pragasTableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            //let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            cell.textLabel?.text = self.controller.loadCurrentName(indexPath: indexPath)
-           // cell.textLabel?.text = pragasDict[sectionTitle[indexPath.section]]?[indexPath.row]
-          return cell
-            
-            func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-                sectionTitle[section]
-            }
-        }*/
