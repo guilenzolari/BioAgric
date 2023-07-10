@@ -17,81 +17,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cHE-Qz-eph">
-                                <rect key="frame" x="143" y="151" width="107" height="106"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nome Comum" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNA-XH-SXt">
-                                <rect key="frame" x="72" y="265" width="249" height="22"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Nome Científico" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGm-mh-9Pg">
-                                <rect key="frame" x="72" y="295" width="249" height="22"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="13"/>
-                                <color key="textColor" systemColor="placeholderTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Marca Comercial" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaT-rJ-Q5Z">
-                                <rect key="frame" x="21" y="325" width="250" height="21"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Poa-SJ-ItS">
+                                <rect key="frame" x="16" y="0.0" width="361" height="852"/>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cHE-Qz-eph" secondAttribute="trailing" constant="143" id="7PN-bM-jW8"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="zNA-XH-SXt" secondAttribute="trailing" constant="72" id="9t2-uG-27f"/>
-                            <constraint firstItem="cGm-mh-9Pg" firstAttribute="top" secondItem="zNA-XH-SXt" secondAttribute="bottom" constant="8" symbolic="YES" id="BpI-RN-V5e"/>
-                            <constraint firstItem="EaT-rJ-Q5Z" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="21" id="DxD-Vo-Cdg"/>
-                            <constraint firstItem="cGm-mh-9Pg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="72" id="GRI-wL-IUe"/>
-                            <constraint firstItem="zNA-XH-SXt" firstAttribute="top" secondItem="cHE-Qz-eph" secondAttribute="bottom" constant="8" symbolic="YES" id="L8z-Bv-vFl"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cGm-mh-9Pg" secondAttribute="trailing" constant="72" id="LPr-U8-65l"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="EaT-rJ-Q5Z" secondAttribute="trailing" constant="122" id="MBY-iW-mmR"/>
-                            <constraint firstItem="cHE-Qz-eph" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="166" id="bst-VD-5gN"/>
-                            <constraint firstItem="cHE-Qz-eph" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="143" id="qsA-LL-KLz"/>
-                            <constraint firstItem="zNA-XH-SXt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="72" id="s4g-at-a45"/>
-                            <constraint firstItem="EaT-rJ-Q5Z" firstAttribute="top" secondItem="cGm-mh-9Pg" secondAttribute="bottom" constant="8" symbolic="YES" id="xgC-5y-BgM"/>
+                            <constraint firstItem="Poa-SJ-ItS" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="DEp-tl-lgb"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Poa-SJ-ItS" secondAttribute="trailing" constant="16" id="FR0-GN-72k"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Poa-SJ-ItS" secondAttribute="bottom" constant="2" id="qZ8-An-Ftv"/>
+                            <constraint firstItem="Poa-SJ-ItS" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="zKs-dD-zYc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vTH-SB-wAL"/>
                     <connections>
-                        <outlet property="imgPraga" destination="cHE-Qz-eph" id="Y5Z-yL-EUQ"/>
-                        <outlet property="lblMarcaComercial" destination="EaT-rJ-Q5Z" id="8Ii-KK-GdY"/>
-                        <outlet property="lblNomeCientifico" destination="cGm-mh-9Pg" id="LYv-jw-rZ4"/>
-                        <outlet property="lblNomeComum" destination="zNA-XH-SXt" id="gJR-Az-UWW"/>
-                        <outlet property="tbProd" destination="5EZ-qb-Rvc" id="0iS-qP-kXj"/>
+                        <outlet property="tbProd" destination="Poa-SJ-ItS" id="vfn-lA-ugA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1002.2900763358779" y="-2.1126760563380285"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="OXs-ft-zft">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hfz-Ta-1Lk" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GLh-PK-a1j">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="4Uj-gv-oJq"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CKb-wh-k7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="75.572519083969468" y="-2.1126760563380285"/>
-        </scene>
     </scenes>
     <resources>
-        <systemColor name="placeholderTextColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
