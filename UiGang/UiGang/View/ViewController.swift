@@ -46,6 +46,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detalhesVC = UIStoryboard(name: "Detalhes", bundle: nil).instantiateViewController(withIdentifier: "DetalhesViewController") as! DetalhesViewController
         detalhesVC.produtoBiologico = self.controller.loadCurrentProdutoBiologico(indexPath: indexPath)
+        detalhesVC.marcaComercial = detalhesVC.produtoBiologico?.marcaComercial
+//        detalhesVC.classes = detalhesVC.produtoBiologico?.classes
         self.navigationController?.pushViewController(detalhesVC, animated: true)
        
     }
