@@ -33,6 +33,9 @@ extension DetalhesViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? DetailTableViewCell{
             cell.lblMarcaComercial.text = marcaComercial
+            if let classe = produtoBiologico?.classes[indexPath.row] {
+                    cell.lblClasse.text = classe.rawValue
+                }
             return cell
         }
         return UITableViewCell()
