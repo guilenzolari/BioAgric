@@ -13,13 +13,20 @@ class DetalhesViewController: UIViewController {
     var produtoBiologico: DatumProdutosBiologicos?
     var marcaComercial: String?
     var classe: Class?
+    var controller: PragasController = PragasController()
     
     override func viewDidLoad() {
         
         self.tbProd.register(UINib(nibName: "DetailTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.tbProd.dataSource = self
         self.tbProd.delegate = self
-        
+        self.controller.getRequestPragas { response, error in
+          if response {
+            self.tbProd.reloadData()
+          }else{
+            print(error)
+          }
+        }
         super.viewDidLoad()
         
     }
@@ -32,9 +39,9 @@ extension DetalhesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as? DetailTableViewCell{
-            cell.lblMarcaComercial.text = marcaComercial
+            cell.lblMarcaComercial?.text = marcaComercial ?? "Produto não encontrado"
             if let classe = produtoBiologico?.classes[indexPath.row] {
-                    cell.lblClasse.text = classe.rawValue
+                cell.lblClasse.text = classe.rawValue
                 }
             return cell
         }
@@ -42,7 +49,12 @@ extension DetalhesViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let produtoVC = UIStoryboard(name: "Detalhes", bundle: nil).instantiateViewController(withIdentifier: "ProdutoViewController") as! ProdutoViewController
-        self.navigationController?.present(produtoVC, animated: true)
+        let prodVC = ProdViewController(nibName: "ProdViewController", bundle: nil)
+        let vc0 = UINavigationController(rootViewController: prodVC)
+        
+        prodVC.produtoBiologico = self.controller.loadCurrentProdutoBiologico(indexPath: indexPath)
+        prodVC.titularRegistro = prodVC.produtoBiologico?.titularRegistro
+        
+        self.present(vc0, animated: true, completion: nil)
     }
 }
