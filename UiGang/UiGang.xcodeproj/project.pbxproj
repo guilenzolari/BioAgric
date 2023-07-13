@@ -103,10 +103,9 @@
 				27542B902A5591E80071FACB /* Detalhes.storyboard */,
 				35C503CF2A54452B0074BBCA /* Culturas.storyboard */,
 				275C258D2A5314C20030405C /* LaunchScreen.storyboard */,
+				27E0FAAD2A5EDA8500757101 /* ProdViewController.xib */,
 				275C258B2A5314C20030405C /* Assets.xcassets */,
 				275C25902A5314C20030405C /* Info.plist */,
-				27E0FAAC2A5EDA8400757101 /* ProdViewController.swift */,
-				27E0FAAD2A5EDA8500757101 /* ProdViewController.xib */,
 			);
 			path = UiGang;
 			sourceTree = "<group>";
@@ -147,6 +146,7 @@
 				275C25862A5314C10030405C /* ViewController.swift */,
 				27CF85C62A55934300E589B3 /* DetalhesViewController.swift */,
 				27E0FAA62A5D88E500757101 /* ProdutoViewController.swift */,
+				27E0FAAC2A5EDA8400757101 /* ProdViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
