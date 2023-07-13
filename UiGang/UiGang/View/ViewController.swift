@@ -40,6 +40,7 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
     cell.textLabel?.text = self.controller.loadCurrentName(indexPath: indexPath)
+      
     return cell
   }
     
@@ -47,7 +48,8 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource{
         let detalhesVC = UIStoryboard(name: "Detalhes", bundle: nil).instantiateViewController(withIdentifier: "DetalhesViewController") as! DetalhesViewController
         detalhesVC.produtoBiologico = self.controller.loadCurrentProdutoBiologico(indexPath: indexPath)
         detalhesVC.marcaComercial = detalhesVC.produtoBiologico?.marcaComercial
-//        detalhesVC.classes = detalhesVC.produtoBiologico?.classes
+
+        
         self.navigationController?.pushViewController(detalhesVC, animated: true)
        
     }
