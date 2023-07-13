@@ -9,22 +9,30 @@ import UIKit
 import Alamofire
 
 
-
-class ResultsVC: UIViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad ()
-        //view.backgroundColor = .systemBlue
-    }
-}
-
-class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
+class ViewController: UIViewController, UISearchBarDelegate, UITextFieldDelegate, UITableViewDelegate{
     func updateSearchResults(for searchController: UISearchController) {
-        guard let text = searchController.searchBar.text else {
-            return
-        }
-        
+        if let searchText = searchController.searchBar.text?.lowercased() {
+                if !searchText.isEmpty {
+                    filteredData = arrayPragas.filter { praga in
+                        guard let firstLetter = praga.first?.lowercased() else {
+                            return false
+                        }
+                        return firstLetter == searchText
+                    }
+                } else {
+                    filteredData = arrayPragas
+                }
+                pragasTableView.reloadData()
+            }
     }
     
+    func applySearchFilter() {
+        if searchText.isEmpty {
+            filteredData = arrayPragas
+        } else {
+            filteredData = arrayPragas.filter {$0.lowercased().contains(searchText.lowercased()) }
+        }
+    }
     
     @IBOutlet weak var pragasTableView: UITableView!
     
@@ -36,12 +44,15 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
     var sectionTitle = [String]()
     var pragasDict = [String: [String]]()
     
-    let searchController = UISearchController(searchResultsController: ResultsVC())
+    var data = [String]()
+    var filteredData = [String]()
+    var searchActive = false
+    var searchText: String = ""
+    let searchController = UISearchController(searchResultsController: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchBar.delegate = self
-        searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
         self.pragasTableView.delegate = self
         self.pragasTableView.dataSource = self
@@ -59,33 +70,82 @@ class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDele
                 print(error)
             }
         }
-                
-
+        
+        func filterData(searchText: String?) {
+            if let searchText = searchText, !searchText.isEmpty {
+                filteredData = arrayPragas.filter { $0.lowercased().contains(searchText.lowercased()) }
+            } else {
+                filteredData = arrayPragas
+            }
+            pragasTableView.reloadData()
+        }
     }
 }
     //Table View
-    extension ViewController: UITableViewDelegate, UITableViewDataSource{
-        func numberOfSections (in tableView: UITableView) -> Int {
-            sectionTitle.count
+extension ViewController: UITableViewDataSource{
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return filteredData.isEmpty ? sectionTitle.count : 1
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if filteredData.isEmpty {
+            let sectionKey = sectionTitle[section]
+            return pragasDict[sectionKey]?.count ?? 0
+        } else {
+            return filteredData.count
+        }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        if filteredData.isEmpty {
+            let sectionKey = sectionTitle[indexPath.section]
+            if let rowData = pragasDict[sectionKey]?[indexPath.row] {
+                cell.textLabel?.text = rowData
+            }
+        } else {
+            let rowData = filteredData[indexPath.row]
+            cell.textLabel?.text = rowData
         }
         
+        return cell
+    }
+
+        
+        func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            filterContentForSearchText(searchText)
+            pragasTableView.reloadData()
+        }
+        
+        func filterContentForSearchText(_ searchText: String) {
+            filteredData = arrayPragas.filter { $0.localizedCaseInsensitiveContains(searchText) }
+        }
+        /*
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            pragasDict[sectionTitle[section]]?.count ?? 0
+            if !filteredData.isEmpty {
+                return filteredData.count
+            }
+            return pragasDict[sectionTitle[section]]?.count ?? 0
             //return self.controller.count()
       }
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-          //  cell.textLabel?.text = self.controller.loadCurrentName(indexPath: indexPath)
-            cell.textLabel?.text = pragasDict[sectionTitle[indexPath.section]]?[indexPath.row]
+            if !filteredData.isEmpty {
+                cell.textLabel?.text = filteredData[indexPath.row]
+            }
+            else {
+                //  cell.textLabel?.text = self.controller.loadCurrentName(indexPath: indexPath)
+                cell.textLabel?.text = pragasDict[sectionTitle[indexPath.section]]?[indexPath.row]
+            }
             return cell
         }
-        
+        */
         func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
             sectionTitle[section]
         }
         func sectionIndexTitles (for tableView: UITableView) -> [String]? {
             sectionTitle
         }
-        
       }
 
