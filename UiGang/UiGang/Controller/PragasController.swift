@@ -11,6 +11,7 @@ import Alamofire
 class PragasController {
     private var arrayPragas: [String] = []
     private var produtosBiologicos: [DatumProdutosBiologicos] = []
+    private var pragas: [Pragas] = []
     
     func count() -> Int{
         return self.arrayPragas.count
@@ -18,6 +19,7 @@ class PragasController {
     func loadCurrentName(indexPath: IndexPath) -> String {
         return self.arrayPragas[indexPath.row]
     }
+    
     func loadCurrentProdutoBiologico(indexPath: IndexPath) -> DatumProdutosBiologicos? {
             let nomeComum = loadCurrentName(indexPath: indexPath)
             
@@ -25,7 +27,7 @@ class PragasController {
                 produto.pragas.contains { $0.nomeComum.contains(nomeComum) }
             }
         }
-        
+    
         func getProdutosByNomeComum(nomeComum: String) -> [DatumProdutosBiologicos] {
             let filteredProducts = produtosBiologicos.filter { praga in
                 praga.pragas.contains { $0.nomeComum.contains(nomeComum) }
@@ -53,11 +55,13 @@ class PragasController {
                             for praga in pragas {
                                 if let nomeComum = praga.pragas.first?.nomeComum.first {
                                     array.append(nomeComum)
+                                    
                                 }
                             }
                             //capital letters, alphabetical order and deleting repeated ones
                             self.arrayPragas = Array(Set(array)).sorted().map { $0.capitalized }
                             completionHandler(self.arrayPragas, nil)
+                            
                             
                             self.produtosBiologicos = pragas
                         }
