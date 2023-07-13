@@ -8,19 +8,41 @@
 import UIKit
 import Alamofire
 
-class ViewController: UIViewController {
+
+
+class ResultsVC: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad ()
+        //view.backgroundColor = .systemBlue
+    }
+}
+
+class ViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else {
+            return
+        }
+        
+    }
+    
     
     @IBOutlet weak var pragasTableView: UITableView!
     
+    // Variaveis para manipulas as pragas
     var controller: PragasController = PragasController()
     var arrayPragas:[String] = []
    
-    
+    // Variaveis para Sections e Index
     var sectionTitle = [String]()
     var pragasDict = [String: [String]]()
     
+    let searchController = UISearchController(searchResultsController: ResultsVC())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchController.searchBar.delegate = self
+        searchController.searchResultsUpdater = self
+        navigationItem.searchController = searchController
         self.pragasTableView.delegate = self
         self.pragasTableView.dataSource = self
         self.controller.getRequestPragas { response, error in
