@@ -81,7 +81,7 @@ class ViewController: UIViewController, UISearchBarDelegate, UITextFieldDelegate
         }
     }
   }
-}
+
     //Table View
 extension ViewController: UITableViewDataSource{
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -122,31 +122,22 @@ extension ViewController: UITableViewDataSource{
         func filterContentForSearchText(_ searchText: String) {
             filteredData = arrayPragas.filter { $0.localizedCaseInsensitiveContains(searchText) }
         }
-        /*
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            if !filteredData.isEmpty {
-                return filteredData.count
-            }
-            return pragasDict[sectionTitle[section]]?.count ?? 0
-            //return self.controller.count()
-      }
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-            if !filteredData.isEmpty {
-                cell.textLabel?.text = filteredData[indexPath.row]
-            }
-            else {
-                //  cell.textLabel?.text = self.controller.loadCurrentName(indexPath: indexPath)
-                cell.textLabel?.text = pragasDict[sectionTitle[indexPath.section]]?[indexPath.row]
-            }
-            return cell
-        }
-        */
+        
         func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
             sectionTitle[section]
         }
         func sectionIndexTitles (for tableView: UITableView) -> [String]? {
             sectionTitle
+        }
+    
+        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            let detalhesVC = UIStoryboard(name: "Detalhes", bundle: nil).instantiateViewController(withIdentifier: "DetalhesViewController") as! DetalhesViewController
+            detalhesVC.produtoBiologico = self.controller.loadCurrentProdutoBiologico(indexPath: indexPath)
+            detalhesVC.marcaComercial = detalhesVC.produtoBiologico?.marcaComercial
+
+            
+            self.navigationController?.pushViewController(detalhesVC, animated: true)
+           
         }
       }
 

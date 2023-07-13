@@ -21,7 +21,7 @@ class DetalhesViewController: UIViewController {
         self.tbProd.dataSource = self
         self.tbProd.delegate = self
         self.controller.getRequestPragas { response, error in
-          if response {
+          if !response.isEmpty {
             self.tbProd.reloadData()
           }else{
             print(error)
