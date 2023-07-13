@@ -21,4 +21,9 @@ class ProdutoTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    func commonInit(title: String, sub: String) {
+        labelName.text = title
+        labelSubName.text = sub
+    }
 }

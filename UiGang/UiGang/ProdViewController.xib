@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProdViewController" customModule="UiGang" customModuleProvider="target">
             <connections>
+                <outlet property="navbar" destination="Wbb-K0-NB3" id="eUl-Hj-PZU"/>
                 <outlet property="tbDadosProd" destination="9T2-fm-0fw" id="YfY-Su-NbX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9T2-fm-0fw">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="always" style="insetGrouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="32" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9T2-fm-0fw">
                     <rect key="frame" x="0.0" y="44" width="393" height="808"/>
                 </tableView>
                 <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wbb-K0-NB3">
@@ -32,8 +33,8 @@
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     </textAttributes>
                     <items>
-                        <navigationItem title="Title" id="dM4-k8-CwF">
-                            <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="qxL-Sz-4b9"/>
+                        <navigationItem id="dM4-k8-CwF">
+                            <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="qxL-Sz-4b9"/>
                             <barButtonItem key="rightBarButtonItem" image="star.fill" catalog="system" id="tin-ld-gY8"/>
                         </navigationItem>
                     </items>
