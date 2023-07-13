@@ -10,8 +10,6 @@ import Alamofire
 
 class PragasController {
   private var arrayPragas: [String] = []
-  private var produtosBiologicos: [DatumProdutosBiologicos] = []
-    
   func count() -> Int{
     return self.arrayPragas.count
   }
@@ -48,5 +46,8 @@ class PragasController {
             print(error)
             completionHandler([], error)
           }
+        }
+      }
+    }
   }
 }
