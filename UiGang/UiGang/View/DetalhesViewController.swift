@@ -56,5 +56,6 @@ extension DetalhesViewController: UITableViewDelegate, UITableViewDataSource{
         prodVC.titularRegistro = prodVC.produtoBiologico?.titularRegistro
         
         self.present(vc0, animated: true, completion: nil)
+        //
     }
 }
