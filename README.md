@@ -3,6 +3,7 @@
 Aplicativo IOS que fornece informações sobre insumos e pesticidas agrícolas.
 
 ##Tecnologias 💻
+
 Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - UIKit e Storyboard
