@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img alt="Bioagric" src="UiGang/Bioagric.png" width="100%">
+  <img alt="Bioagric" src="Bioagric.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
