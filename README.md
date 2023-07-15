@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img alt="calendario da copa" src="assets/Capa.png" width="100%">
+  <img alt="Bioagric" src="UiGang/Bioagric.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
