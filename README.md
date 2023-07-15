@@ -6,6 +6,9 @@
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
+<p align="center">
+  <img alt="calendario da copa" src="assets/Capa.png" width="100%">
+</p>
 
 ## 🚀 Tecnologias
 
